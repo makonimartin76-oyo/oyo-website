@@ -1,142 +1,69 @@
 <!DOCTYPE html>
-<html lang="sn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OYO! (Private) Limited | Sovereign AI of Zimbabwe</title>
+    <title>OYO! (Pvt) Ltd | Sovereign AI of Zimbabwe</title>
     <style>
         :root {
             --zim-green: #006400;
             --zim-gold: #FFD700;
             --zim-red: #FF0000;
-            --dark: #1a1a1a;
-            --light: #f8f9fa;
+            --bg-dark: #0a0f0a;
+            --bg-card: rgba(20, 30, 20, 0.7);
+            --text-primary: #f0f0f0;
+            --text-secondary: #a0b0a0;
         }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--light);
-            color: var(--dark);
+            font-family: 'Segoe UI', 'Roboto', monospace;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
             line-height: 1.6;
+            overflow-x: hidden;
         }
-        header {
-            background: linear-gradient(135deg, var(--zim-green) 0%, #004d00 100%);
-            color: white;
-            text-align: center;
-            padding: 4rem 1rem;
+        /* Animated Background Grid */
+        .bg-grid {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: linear-gradient(rgba(0, 100, 0, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 100, 0, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -1;
+            animation: gridMove 20s linear infinite;
         }
-        header h1 {
-            font-size: 3.5rem;
-            margin: 0;
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
-        header p {
-            font-size: 1.25rem;
-            margin-top: 1rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 3rem 1rem;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-top: 4px solid var(--zim-gold);
-            transition: transform 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-        }
-        .card h3 {
-            color: var(--zim-green);
-            margin-top: 0;
-        }
-        .cta {
-            text-align: center;
-            margin-top: 4rem;
-            padding: 3rem;
-            background: var(--dark);
-            color: white;
-            border-radius: 12px;
-        }
-        .btn {
-            display: inline-block;
-            background: var(--zim-gold);
-            color: var(--zim-green);
-            padding: 1rem 2rem;
-            text-decoration: none;
-            font-weight: 700;
-            border-radius: 8px;
-            margin-top: 1rem;
-            transition: background 0.3s ease;
-        }
-        .btn:hover {
-            background: #ffed4a;
-        }
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: #666;
-            font-size: 0.9rem;
-            border-top: 1px solid #e0e0e0;
-            margin-top: 2rem;
-        }
-    </style>
-</head>
-<body>
+        @keyframes gridMove { 0% { transform: translateY(0); } 100% { transform: translateY(40px); } }
 
-<header>
-    <h1>OYO! (Pvt) Ltd</h1>
-    <p>Sovereign Artificial Intelligence for Zimbabwe's Knowledge Heritage. Local-first, indigenous-language, and constitutionally compliant.</p>
-</header>
+        .container { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+        
+        /* Header */
+        header { text-align: center; padding: 4rem 1rem 2rem; }
+        .logo-shake { display: inline-block; animation: shake 0.8s cubic-bezier(.36,.07,.19,.97) both; font-size: 3rem; }
+        @keyframes shake {
+            10%, 90% { transform: translate3d(-1px, 0, 0) rotate(-1deg); }
+            20%, 80% { transform: translate3d(2px, 0, 0) rotate(2deg); }
+            30%, 50%, 70% { transform: translate3d(-4px, 0, 0) rotate(-4deg); }
+            40%, 60% { transform: translate3d(4px, 0, 0) rotate(4deg); }
+        }
+        h1 { font-size: 3.5rem; font-weight: 800; letter-spacing: -2px; margin-top: 1rem; }
+        .highlight { color: var(--zim-gold); }
+        .subtitle { font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin: 1rem auto; }
 
-<div class="container">
-    <h2 style="text-align: center; color: var(--zim-green);">The OYO Ecosystem</h2>
-    <div class="grid">
-        <div class="card">
-            <h3>🎙️ OYO Media Factory</h3>
-            <p>Local-first multimedia ingestion. Extracting, transcribing, and normalizing indigenous audio and video into sovereign, rights-cleared knowledge assets.</p>
-        </div>
-        <div class="card">
-            <h3>🧠 OYOChat</h3>
-            <p>A sovereign, peer-to-peer instant messaging and AI coordination platform. An indigenous alternative to foreign social media, keeping Zimbabwean data in Zimbabwe.</p>
-        </div>
-        <div class="card">
-            <h3>🛒 OYOStore & Finance</h3>
-            <p>Monetizing knowledge through secure, local-first commerce. Supporting bulk buyer groups, escrow, and integration with ZimSwitch, m-Bridge, and CIPS.</p>
-        </div>
-        <div class="card">
-            <h3>🌾 OYO Agri & Edu</h3>
-            <p>Delivering AI-powered agricultural advisory and indigenous-language education directly to the edge, functioning seamlessly even on low-bandwidth networks.</p>
-        </div>
-    </div>
+        /* Live Metrics Dashboard */
+        .metrics-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem; margin: 3rem 0;
+        }
+        .metric-card {
+            background: var(--bg-card); border: 1px solid rgba(0, 100, 0, 0.3);
+            border-radius: 12px; padding: 1.5rem; text-align: center;
+            backdrop-filter: blur(10px); transition: transform 0.3s, border-color 0.3s;
+        }
+        .metric-card:hover { transform: translateY(-5px); border-color: var(--zim-gold); }
+        .metric-value { font-size: 2.5rem; font-weight: 700; color: var(--zim-gold); font-family: monospace; }
+        .metric-label { font-size: 0.9rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; margin-top: 0.5rem; }
+        .status-dot { display: inline-block; width: 10px; height: 10px; background: #00ff00; border-radius: 50%; margin-right: 8px; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(0, 255, 0, 0); } 100% { box-shadow: 0 0 0 0 rgba(0, 255, 0, 0); } }
 
-    <div class="cta">
-        <h2>Join the Sovereign Digital Economy</h2>
-        <p>We are currently onboarding strategic partners, government stakeholders, and founding engineers.</p>
-        <a href="mailto:founder@oyo.co.zw?subject=OYO%20Partnership%20Inquiry" class="btn">Contact the Founder</a>
-    </div>
-</div>
-
-<footer>
-    <p>&copy; 2026 OYO! (Private) Limited. Harare, Zimbabwe.<br>
-    Constitution before code. Evidence before approval.</p>
-</footer>
-
-</body>
-</html>
+        /* Terminal Window */
+        .terminal {
+            background: #000; border-radius: 8px; border: 1px
